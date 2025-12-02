@@ -1,0 +1,57 @@
+# 🌐 The Complete Web Development Bootcamp — Front-End
+
+Este repositório reúne todos os projetos e exercícios desenvolvidos durante o curso **The Complete Web Development Bootcamp**, ministrado pela **Dr. Angela Yu** na Udemy.
+
+ O objetivo é documentar minha jornada de aprendizado em **Desenvolvimento Web Front-End**, passando pelos fundamentos essenciais até projetos mais completos, incluindo HTML, CSS, JavaScript e outras tecnologias modernas utilizadas no dia a dia do desenvolvedor web.
+
+Este repositório também funciona como um **portfólio de estudos**, sendo atualizado continuamente conforme avanço no curso.
+
+---
+
+## 📅 Status do Curso
+- Início: **02/12/2025**  
+- Final: **Em progresso**
+
+---
+
+## Projetos Desenvolvidos
+
+### Em andamento
+
+---
+
+##  O curso aborda desde os fundamentos do desenvolvimento web até tópicos mais avançados, incluindo:
+
+HTML5 e boas práticas de semântica
+
+CSS3 avançado (Flexbox, Grid, responsividade, animações)
+
+JavaScript (ES6+) e lógica de programação
+
+Manipulação do DOM e eventos
+
+Bootstrap para criação rápida de layouts responsivos
+
+jQuery e manipulação simplificada da interface
+
+Git e GitHub para versionamento e colaboração
+
+Node.js e conceitos básicos de backend
+
+Express.js para criação de servidores simples
+
+APIs e consumo de dados externos
+
+JSON e manipulação de dados
+
+Deploy de projetos (GitHub Pages, Render, etc.)
+
+Boas práticas de organização e estruturação de código
+
+Projetos completos integrando HTML + CSS + JavaScript
+
+### Novos projetos serão adicionados em breve — fique de olho no meu GitHub! 🚀
+---
+
+🔗 **Curso:** *The Complete 202X Web Development Bootcamp*  
+👩‍🏫 **Instrutora:** Dr. Angela Yu  
