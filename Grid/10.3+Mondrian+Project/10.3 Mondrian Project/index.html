@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+    /* 
+    Write your CSS here 
+    Gap Colour: #000
+    White: #F0F1EC
+    Red: #E72F24
+    Black: #232629
+    Blue: #004592
+    Yellow: #F9D01E
+
+    For dimensions, see dimensions.png image.
+    HINT: Remember you can't change the properties of grid lines.
+    But grid lines are transparent!
+    */
+    .container{
+      display: grid;
+      grid-template-rows: 414px 310px 20px;
+      grid-template-columns: 320px 378px 50px;
+      height: 768px;
+      width: 768px;
+      background-color: whitesmoke;
+      gap: 9px;
+    }
+
+    .container > div {
+      border: 1px solid black;
+    
+    }
+    .s1{
+      background: red;
+    }
+    .s2{
+      grid-column: span 2;
+    }
+    .s5{
+      height: 130px;
+      background-color: navy;
+    }
+    .s6{
+      width:320px;
+    }
+    .s7{
+      width: 198px;
+    }
+
+     .s8{
+      width: 193px;
+    }
+    .flex{
+      display: flex;
+      background-color: aliceblue;
+      width: 705px;
+      .s6{
+        background-color: whitesmoke;
+      }
+      .s7{
+        background-color: yellow;
+      }
+      .s8{
+        background-color: gray;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Write your HTML here -->
+  <div class="container"> 
+    <div class="s1">1</div>
+    <div class="s2">2</div>
+    <div class="s3">3</div>
+    <div class="s4">4</div>
+    <div class="s5">5</div>
+    <div class="flex">
+      <div class="s6">6</div>
+      <div class="s7">7</div>
+      <div class="s8">8</div>
+    </div>
+  </div>
+</body>
+
+</html>
