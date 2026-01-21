@@ -19,53 +19,59 @@
     HINT: Remember you can't change the properties of grid lines.
     But grid lines are transparent!
     */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
     .container{
       display: grid;
-      grid-template-rows: 414px 310px 20px;
-      grid-template-columns: 320px 378px 50px;
-      height: 768px;
-      width: 768px;
-      background-color: whitesmoke;
-      gap: 9px;
-    }
-
-    .container > div {
-      border: 1px solid black;
+      background-color: #000;
+      grid-template-columns: 320px 198px 153px 50px;
+      grid-template-rows: 414px 130px 155px 22px;
+      height: 748px;
+      width: 748px;
+      gap: 9px;;
     
     }
-    .s1{
-      background: red;
-    }
-    .s2{
-      grid-column: span 2;
-    }
-    .s5{
-      height: 130px;
-      background-color: navy;
-    }
-    .s6{
-      width:320px;
-    }
-    .s7{
-      width: 198px;
+
+    .item{
+      background-color: #F0F1EC;
     }
 
-     .s8{
-      width: 193px;
+    .s2{
+      grid-column: span 3;
     }
-    .flex{
-      display: flex;
-      background-color: aliceblue;
-      width: 705px;
-      .s6{
-        background-color: whitesmoke;
-      }
-      .s7{
-        background-color: yellow;
-      }
-      .s8{
-        background-color: gray;
-      }
+
+    .s3{
+      grid-row: span 2;
+    }
+    .s4{
+        grid-column: 2 / 4;
+        grid-row: 2 / 4;
+    }
+    .s6{
+      grid-row: span 2 ;
+    }
+    
+    .s8{
+      background-color: #F9D01E;
+    }
+    
+    .s9{
+      background-color: #232629;
+    }
+
+    .s1{
+      background-color: #E72F24;
+    }
+
+    .s5{
+      background-color: #004592;
+      border-bottom: 10px solid black;
     }
 
   </style>
@@ -74,16 +80,15 @@
 <body>
   <!-- Write your HTML here -->
   <div class="container"> 
-    <div class="s1">1</div>
-    <div class="s2">2</div>
-    <div class="s3">3</div>
-    <div class="s4">4</div>
-    <div class="s5">5</div>
-    <div class="flex">
-      <div class="s6">6</div>
-      <div class="s7">7</div>
-      <div class="s8">8</div>
-    </div>
+    <div class="item s1">1</div>
+    <div class="item s2">2</div>
+    <div class="item s3">3</div>
+    <div class="item s4">4</div>
+    <div class="item s5">5</div>
+    <div class="item s6">6</div>
+    <div class="item s7">7</div>
+    <div class="item s8">8</div>
+    <div class="item s9">9</div>
   </div>
 </body>
 
