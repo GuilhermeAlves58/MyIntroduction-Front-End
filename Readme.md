@@ -15,6 +15,8 @@ Este repositório também funciona como um **portfólio de estudos**, sendo atua
 ---
 
 ## Projetos Desenvolvidos
+### 📃 [PortifolioHTML](https://guilhermealves58.github.io/Curriculo-Web/)
+Site de portfólio desenvolvido **exclusivamente com HTML**, com o objetivo de demonstrar tanto o domínio da estrutura e semântica da linguagem quanto minhas habilidades pessoais e profissionais.
 
 ### Em andamento
 
