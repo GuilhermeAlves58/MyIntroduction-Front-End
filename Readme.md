@@ -15,9 +15,12 @@ Este repositório também funciona como um **portfólio de estudos**, sendo atua
 ---
 
 ## Projetos Desenvolvidos
-### 📃 [PortifolioHTML](https://guilhermealves58.github.io/Curriculo-Web/)
+### [PortifolioHTML](https://guilhermealves58.github.io/Curriculo-Web/)
 Site de portfólio desenvolvido **exclusivamente com HTML**, com o objetivo de demonstrar tanto o domínio da estrutura e semântica da linguagem quanto minhas habilidades pessoais e profissionais.
 
+### [Portifolio-Html-Css-Bootstrap](https://guilhermealves58.github.io/Portifolio-website-Html-Css/)
+Site de portfólio desenvolvido com **HTML, CSS e Bootstrap**, representando uma evolução do projeto anterior feito apenas com HTML puro.  
+Neste projeto, apliquei estilização com CSS e utilizei o Bootstrap para criar um layout mais organizado, responsivo e visualmente agradável.
 ### Em andamento
 
 ---
