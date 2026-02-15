@@ -7,11 +7,11 @@ function fibonacciGenerator (n) {
     }
     else{
         output = [0,1];
-        for (let index = 0; index < n; index++) {
+        for (let index = 0; index < n - 2; index++) {
             output.push( output[output.length - 2] + output[output.length - 1 ]);
         }
     }
-    console.log(output);
+    return output;
 }
 
 fibonacciGenerator(10);
