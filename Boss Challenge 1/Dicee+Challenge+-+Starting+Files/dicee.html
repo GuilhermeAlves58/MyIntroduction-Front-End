@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="./images/dice6.png" />
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="./images/dice6.png" />
+      </div>
+    </div>
+
+    <footer>www 🎲 App Brewery 🎲 com</footer>
+  </body>
+   <script>
+        var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+        if (randomNumber1 === 1){
+          document.querySelector(".img1").setAttribute("src", "./images/dice1.png" );
+        }else if(randomNumber1 === 2){
+          document.querySelector(".img1").setAttribute("src", "./images/dice2.png" );
+        }else if(randomNumber1 === 3){
+          document.querySelector(".img1").setAttribute("src", "./images/dice3.png" );
+        }else if(randomNumber1 === 4){
+          document.querySelector(".img1").setAttribute("src", "./images/dice4.png" );
+        }else if(randomNumber1 === 5){
+          document.querySelector(".img1").setAttribute("src", "./images/dice5.png" );
+        }else if(randomNumber1 === 6){
+          document.querySelector(".img1").setAttribute("src", "./images/dice6.png" );
+        }
+
+        var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+        if (randomNumber2 === 1){
+          document.querySelector(".img2").setAttribute("src", "./images/dice1.png" );
+        }else if(randomNumber2 === 2){
+          document.querySelector(".img2").setAttribute("src", "./images/dice2.png" );
+        }else if(randomNumber2 === 3){
+          document.querySelector(".img2").setAttribute("src", "./images/dice3.png" );
+        }else if(randomNumber2 === 4){
+          document.querySelector(".img2").setAttribute("src", "./images/dice4.png" );
+        }else if(randomNumber2 === 5){
+          document.querySelector(".img2").setAttribute("src", "./images/dice5.png" );
+        }else if(randomNumber2 === 6){
+          document.querySelector(".img2").setAttribute("src", "./images/dice6.png" );
+        }
+
+
+        if (randomNumber1 > randomNumber2){
+          document.querySelector("h1").textContent = ":() Player 1 wins"
+        }else if(randomNumber1 < randomNumber2){
+          document.querySelector("h1").textContent = ":-)  Player 2 wins"
+        }else{
+          document.querySelector("h1").textContent = ":/  draw"
+        }
+
+      </script>
+
+</html>
