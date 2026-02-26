@@ -1,5 +1,5 @@
-
-for (let index = 0; index < document.querySelectorAll(".drum").length; index++) {
+var drumsNumbers = document.querySelectorAll(".drum").length;
+for (let index = 0; index < drumsNumbers; index++) {
     document.querySelectorAll("button")[index].addEventListener("click", handleClick)    
 }
 function handleClick(){
