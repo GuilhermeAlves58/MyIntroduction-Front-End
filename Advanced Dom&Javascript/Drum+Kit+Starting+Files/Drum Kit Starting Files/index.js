@@ -37,6 +37,17 @@ function handleClick(){
         default: console.log(buttonHTML)
     }
 }
+function HouseKeeper(yearsOfExperiences, name, cleaningRepertoire) {
+    this.yearsOfExperiences = yearsOfExperiences;
+    this.name = name;
+    this.cleaningRepertoire = cleaningRepertoire;
+    this.greet = function() {
+        console.log(`Hi, I'm ${this.name}`);
+    };
+    this.clean = function(){
+        console.log(`I have cleaned ${this.cleaningRepertoire}`);
+    };
+}
 
 function add(num1, num2){
     return num1 + num2;
