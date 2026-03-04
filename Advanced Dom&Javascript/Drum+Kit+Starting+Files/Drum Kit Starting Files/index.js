@@ -7,11 +7,13 @@ for (let index = 0; index < drumsNumbers; index++) {
         var buttonHTML = this.innerHTML;
         makeSound(buttonHTML);
 
+        buttonAnimation(buttonHTML);
     });
 
 }
 document.addEventListener("keydown", function(event) {
     makeSound(event.key);
+    buttonAnimation(event.key);
 });
 
 
@@ -44,7 +46,7 @@ function makeSound(key) {
             break;
 
         case "l":
-            new Audio("sounds/kick.mp3").play();
+            new Audio("sounds/kick-bass.mp3").play();
             break;
 
         default:
@@ -85,4 +87,13 @@ function subtract(num1, num2){
 
 function calculator(num1, num2, operator){
     return operator(num1,num2);
+}
+
+function buttonAnimation(currentKey){
+    var activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+
+    setTimeout(function() {
+        activeButton.classList.remove("pressed")
+    }, 100)
 }
