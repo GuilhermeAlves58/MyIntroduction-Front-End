@@ -33,3 +33,32 @@ $(document).keydown(function(event){
 $("h1").on("mouseover", function(){
     $("h1").css("color","purple");
 })
+
+// Comparação entre javascript e Jquery: Adição e remoção de elementos
+// before
+const h1 = document.querySelector("h1");
+
+h1.before("Texto antes ");
+
+// after
+h1.after(" Texto depois");
+
+// prepend
+h1.prepend("Início ");
+
+// append
+h1.append(" Final");
+
+// before
+$("h1").before("Texto antes ");
+
+// after
+$("h1").after(" Texto depois");
+
+// prepend
+$("h1").prepend("Início ");
+
+// append
+$("h1").append(" Final");
+
+// Comparação entre javascript e Jquery: Animações
