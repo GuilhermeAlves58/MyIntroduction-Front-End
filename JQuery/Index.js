@@ -62,3 +62,10 @@ $("h1").prepend("Início ");
 $("h1").append(" Final");
 
 // Comparação entre javascript e Jquery: Animações
+document.querySelector("button").addEventListener("click", () => {
+  document.querySelector("h1").style.opacity = "0";
+});
+
+$("button").click(function() {
+  $("h1").fadeOut();
+});
