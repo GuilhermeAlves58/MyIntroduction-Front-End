@@ -1,13 +1,17 @@
+// Adicionar comentários 
 let buttonColours = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
 let userClickedPattern = [];
 
+// Adicionar comentários 
 let userChosenColour = $(".btn").on("click", function(){
         console.log(this.id);
+        playSound(this.id)
     });
 
 userClickedPattern.push(userChosenColour);
 
+// Adicionar comentários 
 function nextSequence(){
 
     let randomNumber = Math.floor(Math.random() * 4);
@@ -21,10 +25,13 @@ function nextSequence(){
         $("#" + randomChosenColour).removeClass("flash");
     }, 200);
 
-    let audio = new Audio("sounds/" + randomChosenColour + ".mp3");
-    audio.play();
-
+    playSound(randomChosenColour)
     
+}
+// Adicionar comentários 
+function playSound(name){
+        let audio = new Audio("sounds/" + name + ".mp3");
+        audio.play();
 }
 
 nextSequence();  
