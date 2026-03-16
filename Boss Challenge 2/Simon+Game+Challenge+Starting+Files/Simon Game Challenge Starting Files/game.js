@@ -14,6 +14,8 @@ let userChosenColour = $(".btn").on("click", function(){
 
 userClickedPattern.push(userChosenColour);
 
+
+// Adicionar comentários 
 $(document).on("keydown",function(event){
     if(event.key === "a" || event.key === "A" ){
         nextSequence(); 
@@ -47,3 +49,7 @@ function animatePress(currentColour){
         $("#" + currentColour).removeClass("pressed");
     }, 200);
 }  
+
+function checkAnswer(currentLevel){
+
+}
