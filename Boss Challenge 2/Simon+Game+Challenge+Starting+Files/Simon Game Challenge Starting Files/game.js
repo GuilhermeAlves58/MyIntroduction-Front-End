@@ -6,14 +6,16 @@ let userClickedPattern = [];
 let level = 0;
 
 // Adicionar comentários 
-let userChosenColour = $(".btn").on("click", function(){
-        console.log(this.id);
-        playSound(this.id)
-        animatePress(this.id);
-    });
+$(".btn").click(function() {
 
-userClickedPattern.push(userChosenColour);
+  var userChosenColour = $(this).attr("id");
+  userClickedPattern.push(userChosenColour);
 
+  playSound(userChosenColour);
+  animatePress(userChosenColour);
+
+  checkAnswer(userClickedPattern.length-1);
+});
 
 // Adicionar comentários 
 $(document).on("keydown",function(event){
@@ -23,6 +25,8 @@ $(document).on("keydown",function(event){
 })
 // Adicionar comentários 
 function nextSequence(){
+
+    userClickedPattern = [];
 
     $("#level-title").text( "Level "+ level++);
 
@@ -51,5 +55,16 @@ function animatePress(currentColour){
 }  
 
 function checkAnswer(currentLevel){
-
+    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+        console.log("success")
+        if (userClickedPattern.length === gamePattern.length){
+            setTimeout(function () {
+                nextSequence();
+            },1000);
+        }
+    }
+    else{
+        console.log("wrong")
+    }
 }
+    
