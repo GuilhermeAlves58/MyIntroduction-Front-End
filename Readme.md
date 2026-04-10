@@ -9,7 +9,7 @@ Este repositório também funciona como um **portfólio de estudos**, sendo atua
 ---
 
 ## 📅 Status do Curso
-- Início: **02/12/2025**  
+- Início: **10/01/2026**  
 - Final: **Em progresso**
 
 ---
