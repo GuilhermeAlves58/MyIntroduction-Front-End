@@ -21,10 +21,12 @@ Site de portfólio desenvolvido **exclusivamente com HTML**, com o objetivo de d
 ### [Portifolio-Html-Css-Bootstrap](https://guilhermealves58.github.io/Portifolio-website-Html-Css/)
 Site de portfólio desenvolvido com **HTML, CSS e Bootstrap**, representando uma evolução do projeto anterior feito apenas com HTML puro.  
 Neste projeto, apliquei estilização com CSS e utilizei o Bootstrap para criar um layout mais organizado, responsivo e visualmente agradável.
-### Em andamento
+
+### [Web-blog](https://github.com/GuilhermeAlves58/Web-blog-application)
+O principal objetivo foi praticar a construção de um CRUD completo no servidor, trabalhando com rotas, renderização dinâmica, formulários e manipulação de dados em memória, sem uso de banco de dados.
+A proposta do projeto é permitir que o usuário crie, visualize e edite posts de forma simples, com uma interface limpa e responsiva.
 
 ---
-
 ##  O curso aborda desde os fundamentos do desenvolvimento web até tópicos mais avançados, incluindo:
 
 HTML5 e boas práticas de semântica
