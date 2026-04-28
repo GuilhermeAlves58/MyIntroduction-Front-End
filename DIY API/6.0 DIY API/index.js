@@ -85,7 +85,7 @@ var jokes = [
   {
     id: 2,
     jokeText:
-      "Why did the scarecrow win an award? Because he was outstanding in his field.",
+      "Why did the scarecrow win an award? Because he was outstanding in his field",
     jokeType: "Puns",
   },
   {
