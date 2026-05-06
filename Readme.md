@@ -26,6 +26,7 @@ Neste projeto, apliquei estilização com CSS e utilizei o Bootstrap para criar 
 O principal objetivo foi praticar a construção de um CRUD completo no servidor, trabalhando com rotas, renderização dinâmica, formulários e manipulação de dados em memória, sem uso de banco de dados.
 A proposta do projeto é permitir que o usuário crie, visualize e edite posts de forma simples, com uma interface limpa e responsiva.
 
+### [Country-Explorer]
 ---
 ##  O curso aborda desde os fundamentos do desenvolvimento web até tópicos mais avançados, incluindo:
 
