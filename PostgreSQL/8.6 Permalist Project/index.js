@@ -24,7 +24,9 @@ let items = [
   { id: 2, title: "Finish homework" },
 ];
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
+  const result = await db.query("SELECT * FROM items ORDER BY id ASC");
+  items = result.rows;
   res.render("index.ejs", {
     listTitle: "Today",
     listItems: items,
@@ -39,13 +41,18 @@ app.post("/add", async (req, res) => {
 });
 
 app.post("/edit", async (req, res) => {
-  const item = req.body.newItem;
-  const id = req.body.id;
+  const item = req.body.updatedItemTitle;
+  const id = req.body.updatedItemId;
   const result = await db.query("UPDATE items SET title = ($1) WHERE id = ($2)", [item, id]);
   res.redirect("/");
 });
 
-app.post("/delete", async (req, res) => {});
+app.post("/delete", async (req, res) => {
+  const id = req.body.deleteItemId;
+  const result = await db.query("DELETE FROM items WHERE id = ($1)", [id]);
+  
+  res.redirect("/");
+});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
