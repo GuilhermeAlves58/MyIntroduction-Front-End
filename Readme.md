@@ -29,6 +29,9 @@ A proposta do projeto é permitir que o usuário crie, visualize e edite posts d
 ### [Country-Explorer](https://coutryapi.onrender.com/) 
 Aplicação web que consome uma API de países para exibir informações detalhadas como nome, capital, população, região e bandeira. O projeto utiliza requisições HTTP para integração com API externa, manipulação de dados JSON e renderização dinâmica no front-end, com foco em consumo de APIs REST, tratamento de dados e experiência do usuário.
 
+### [Game-backlog](https://game-backlog-zy2v.onrender.com)
+Aplicação web full stack para gerenciamento de biblioteca de jogos, com integração à RAWG API para busca de títulos e PostgreSQL para armazenamento de dados. Desenvolvida com Node.js, Express.js, EJS e SQL, utilizando operações CRUD e consumo de APIs REST.
+
 ---
 ##  O curso aborda desde os fundamentos do desenvolvimento web até tópicos mais avançados, incluindo:
 
