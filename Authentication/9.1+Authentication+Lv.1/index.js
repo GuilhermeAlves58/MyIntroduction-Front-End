@@ -1,10 +1,10 @@
+import 'dotenv/config';
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
-import 'dotenv/config';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 const db = new pg.Client({
   host:     process.env.DB_HOST,
   port:     process.env.DB_PORT,
@@ -52,9 +52,27 @@ app.post("/register", async (req, res) => {
 app.post("/login", async (req, res) => {
     const email = req.body.username;
     const password = req.body.password;
-    const result = await db.query("INSERT INTO users (email, password) VALUES ($1,$2)", [email,password]);
-    console.log(result);
-    res.render("secrets.ejs");
+    
+    try {
+    const result = await db.query("SELECT * FROM users WHERE email = $1", [
+      email,
+    ]);
+
+    if (result.rows.length > 0) {
+      const user = result.rows[0];
+      const storedPassword = user.password;
+
+      if (storedPassword != password){
+        res.send("incorrect password");
+      }else{
+        res.render("secrets.ejs");
+      }
+    } else {
+      res.send("Email doensn't exists. Try sign up.");
+    }
+  } catch (err) {
+    console.log(err);
+  }
 
 });
 
