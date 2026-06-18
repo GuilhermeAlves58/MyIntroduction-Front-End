@@ -2,6 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import bcrypt from "bcrypt";
+import { session } from "passport";
+import { Strategy } from "passport-local";
 
 const app = express();
 const port = 3000;
@@ -9,7 +11,11 @@ const saltRounds = 10;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
+app.use(session({
+  secret: "SECRETWORD",
+  resave: false,
+  saveUnitialized: true
+}));
 const db = new pg.Client({
   user: "postgres",
   host: "localhost",
@@ -30,6 +36,14 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
+
+app.get("/secrets", (req,res) =>{
+    if (req.isAuthenticated()) {
+      res.render("register.ejs");
+    } else {
+      res.redirect("/login");
+    }
+})
 
 app.post("/register", async (req, res) => {
   const email = req.body.username;
@@ -64,8 +78,10 @@ app.post("/register", async (req, res) => {
 
 app.post("/login", async (req, res) => {
   const email = req.body.username;
-  const loginPassword = req.body.password;
+  const loginPassword = req.body.password;     
+});
 
+app.use(new Strategy( async function verify(username,password,cb){
   try {
     const result = await db.query("SELECT * FROM users WHERE email = $1", [
       email,
@@ -78,20 +94,19 @@ app.post("/login", async (req, res) => {
           console.error("Error comparing passwords:", err);
         } else {
           if (result) {
-            res.render("secrets.ejs");
+            return cb(null,user);
           } else {
-            res.send("Incorrect Password");
+            return  cb(null,false);
           }
         }
       });
     } else {
-      res.send("User not found");
+      return  cb("user not found");
     }
   } catch (err) {
-    console.log(err);
+    return  cb(err);
   }
-});
-
+}))
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
