@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import bcrypt from "bcrypt";
-import { session } from "passport";
+import passport, { session } from "passport";
 import { Strategy } from "passport-local";
 
 const app = express();
@@ -14,7 +14,10 @@ app.use(express.static("public"));
 app.use(session({
   secret: "SECRETWORD",
   resave: false,
-  saveUnitialized: true
+  saveUnitialized: true,
+  cookie: {
+    maxAge:   1000 * 60 * 60 * 24,
+  },
 }));
 const db = new pg.Client({
   user: "postgres",
@@ -63,11 +66,15 @@ app.post("/register", async (req, res) => {
           console.error("Error hashing password:", err);
         } else {
           console.log("Hashed Password:", hash);
-          await db.query(
-            "INSERT INTO users (email, password) VALUES ($1, $2)",
+          const result = await db.query(
+            "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *",
             [email, hash]
           );
-          res.render("secrets.ejs");
+          const user = result.rows[0];
+          req.login(user, (err) => {
+            console.log(err)
+            res.redirect("/secrets")
+          })
         }
       });
     }
@@ -75,6 +82,11 @@ app.post("/register", async (req, res) => {
     console.log(err);
   }
 });
+
+app.post("/login", passport.authenticate("local", {
+  successRedirect: "/secrets",
+  failureRedirect: "/login", 
+}));
 
 app.post("/login", async (req, res) => {
   const email = req.body.username;
@@ -106,7 +118,16 @@ app.use(new Strategy( async function verify(username,password,cb){
   } catch (err) {
     return  cb(err);
   }
-}))
+}));
+
+passport.serializeUser((user,cb) => {
+  cb(null,user);
+});
+
+passport.deserializeUser((user,cb) => {
+  cb(null,user);
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
