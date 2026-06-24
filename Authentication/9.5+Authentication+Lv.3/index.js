@@ -1,11 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
-import pg from "pg";
+import pg, { Client } from "pg";
 import bcrypt from "bcrypt";
 import passport from "passport";
 import { Strategy } from "passport-local";
 import session from "express-session";
 import env from "dotenv";
+import GoogleStrategy from "passport-google-oauth2";
+import { Profiler } from "react";
 
 const app = express();
 const port = 3000;
@@ -64,6 +66,11 @@ app.get("/secrets", (req, res) => {
     res.redirect("/login");
   }
 });
+
+app.get("/auth/google", passport.authenticate("google", {
+  scope: ["profile", "email"],
+  
+}))
 
 app.post(
   "/login",
@@ -137,6 +144,16 @@ passport.use(
       console.log(err);
     }
   })
+);
+
+passport.use("google", new GoogleStrategy({
+  ClientID: process.env.GOOGLE_CLIENT_ID,
+  ClientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: "http://localhost:3000/auth/google/secrets",
+  userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
+}, async (acessToken, refreshToken, profile, cb) => {
+  console.log(profile);
+})
 );
 
 passport.serializeUser((user, cb) => {
