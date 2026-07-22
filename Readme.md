@@ -51,7 +51,7 @@ APIs e consumo de dados externos
 
 JSON e manipulação de dados
 
-Deploy de projetos (GitHub Pages, Render, etc.)
+Deploy de projetos (GitHub Pages)
 
 Boas práticas de organização e estruturação de código
 
