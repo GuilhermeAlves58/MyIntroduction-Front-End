@@ -7,7 +7,7 @@ function Heading() {
   let greeting;
 
   const customStyle = {
-    color: ""
+    color: "",
   };
 
   if (currentTime < 12) {
